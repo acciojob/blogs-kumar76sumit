@@ -9,13 +9,12 @@ import java.util.List;
 @Table(name = "blog")
 public class Blog {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String title;
     private String content;
     private Date pubDate;
     @ManyToOne
-    @JoinColumn
     private User user;
     @OneToMany(mappedBy = "blog" , cascade = CascadeType.ALL)
     private List<Image> imageList=new ArrayList<>();

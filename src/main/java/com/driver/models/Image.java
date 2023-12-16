@@ -6,12 +6,11 @@ import java.util.UUID;
 @Table(name = "image")
 public class Image {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String description;
     private String dimensions;
     @ManyToOne
-    @JoinColumn
     private Blog blog;
 
     public Image() {

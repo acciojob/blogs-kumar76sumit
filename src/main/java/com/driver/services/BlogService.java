@@ -32,7 +32,7 @@ public class BlogService {
         blog.setPubDate(new Date());
 
         user.getBlogList().add(blog);
-        blogRepository1.save(blog);
+        userRepository1.save(user);
         return blog;
     }
 
