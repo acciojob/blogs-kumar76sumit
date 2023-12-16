@@ -16,7 +16,7 @@ public class Blog {
     private Date pubDate;
     @ManyToOne
     private User user;
-    @OneToMany(mappedBy = "blog")
+    @OneToMany(mappedBy = "blog" , cascade = CascadeType.ALL)
     private List<Image> imageList=new ArrayList<>();
 
     public Blog() {
@@ -77,17 +77,5 @@ public class Blog {
 
     public void setImageList(List<Image> imageList) {
         this.imageList = imageList;
-    }
-
-    @Override
-    public String toString() {
-        return "Blog{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", pubDate=" + pubDate +
-                ", user=" + user +
-                ", imageList=" + imageList +
-                '}';
     }
 }

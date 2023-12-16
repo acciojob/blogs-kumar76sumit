@@ -16,7 +16,7 @@ public class User {
     private String firstName;
     private String lastName;
     @OneToMany(mappedBy = "user")
-    private List<Blog> blogList=new ArrayList<Blog>();
+    private List<Blog> blogList=new ArrayList<>();
 
     public User() {
     }
